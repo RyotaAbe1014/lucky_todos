@@ -53,5 +53,6 @@ class Shared::Field(T) < BaseComponent
   # Use a text_input by default
   def render
     render &.text_input
+    submit("Update Post", class: "btn")
   end
 end

@@ -12,7 +12,7 @@ class Todos::NewPage < MainLayout
       # Edit fields in src/components/todos/form_fields.cr
       mount Todos::FormFields, op
 
-      submit "Save", data_disable_with: "Saving..."
+      submit "作成", data_disable_with: "Saving...", class: "btn btn-primary"
     end
   end
 end

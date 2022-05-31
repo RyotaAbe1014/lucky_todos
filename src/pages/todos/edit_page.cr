@@ -13,7 +13,6 @@ class Todos::EditPage < MainLayout
     form_for Todos::Update.with(todo.id) do
       # Edit fields in src/components/todos/form_fields.cr
       mount Todos::FormFields, op
-
       submit "Update", data_disable_with: "Updating..."
     end
   end

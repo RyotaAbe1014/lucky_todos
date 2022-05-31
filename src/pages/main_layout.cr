@@ -16,12 +16,6 @@ abstract class MainLayout
     html_doctype
 
     html lang: "ja" do
-      head do
-        utf8_charset
-        title page_title
-        css_link asset("css/app.css")
-        js_link asset("js/app.js")
-      end
       mount Shared::LayoutHead, page_title: page_title
       body do
         header class: "header" do

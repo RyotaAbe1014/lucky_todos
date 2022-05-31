@@ -15,6 +15,8 @@ class Todos::IndexPage < MainLayout
           h4 todo.title, class: "card-title"
           para todo.content, class: "card-text"
           link "詳細", to: Todos::Show.with(todo.id), class: "btn btn-primary"
+          link "編集", to: Todos::Edit.with(todo.id), class: "btn btn-success"
+          link "削除", to: Todos::Delete.with(todo.id), class: "btn btn-danger", data_confirm: "本当に削除しますか？"
         end
       end
     end
