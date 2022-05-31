@@ -1,5 +1,6 @@
 class Todos::IndexPage < MainLayout
   needs todos : TodoQuery
+  needs pages : Lucky::Paginator
   quick_def page_title, "todo一覧"
 
   def content
@@ -20,5 +21,6 @@ class Todos::IndexPage < MainLayout
         end
       end
     end
+      mount Lucky::PaginationLinks::BootstrapNav, pages
   end
 end

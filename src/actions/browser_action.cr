@@ -1,6 +1,12 @@
 abstract class BrowserAction < Lucky::Action
   include Lucky::ProtectFromForgery
+  include Lucky::Paginator::BackendHelpers
+  def paginator_per_page : Int32
+    3 # Return a static value
 
+    # Or allow using a param with a default
+    params.get?(:per_page).try(&.to_i) || 3
+  end
   # By default all actions are required to use underscores.
   # Add `include Lucky::SkipRouteStyleCheck` to your actions if you wish to ignore this check for specific routes.
   include Lucky::EnforceUnderscoredRoute
